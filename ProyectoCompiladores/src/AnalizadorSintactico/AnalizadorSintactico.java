@@ -275,6 +275,7 @@ public class AnalizadorSintactico {
     public Token esTipoRetorno() {
         if (tokenActual.getLexema().equals(esTipoDato().getLexema()) || tokenActual.getLexema().equals("")) {
             return tokenActual;
+
         }
 
         return null;
@@ -283,6 +284,26 @@ public class AnalizadorSintactico {
     public Token esFuncion() {
         if (tokenActual.getLexema().equals("F")) {
             obtenerSiguienteToken();
+
+            if (tokenActual.getCategoria() == Categoria.IDENTIFICADOR) {
+                obtenerSiguienteToken();
+
+                Token tipoRetorno = esTipoRetorno();
+                if (tipoRetorno != null) {
+                    obtenerSiguienteToken();
+
+                    if (tokenActual.getCategoria() == Categoria.PARENTESIS_ABRIR) {
+                        obtenerSiguienteToken();
+                        ArrayList<Parametro> litaParametros
+                                
+                        if () {
+
+                        }
+
+                    }
+
+                }
+            }
 
         }
         return null;
